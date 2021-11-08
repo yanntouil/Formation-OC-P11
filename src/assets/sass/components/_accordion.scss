@@ -1,0 +1,52 @@
+/**
+ * Accordion
+ */
+
+
+
+
+
+
+.accordion {
+    &-header {
+        position: relative;
+        display: flex; justify-content: space-between; align-items: center;
+        padding: .625rem 1.125rem;
+        border-radius: .3125rem;
+        background-color: $primary;
+        color: $white;
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+        transform: rotate(0);
+        cursor: pointer;
+        & img {
+            transition: transform .3s ease-in-out;
+        }
+    }
+    &.active &-header img {
+        transform: rotate(-180deg);
+    }
+    &-content {
+        margin-top: -0.3125rem;
+        overflow: hidden;
+        border-radius: 0 0 .3125rem .3125rem;
+        background-color: $gray-100;
+        color: $primary;
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 1.4;
+        transition: height .3s ease-in-out;
+        &-wrapper {
+            padding: 2rem 1.125rem 1.125rem;
+            opacity: 0;
+            transform: translateX(3rem);
+            transition: opacity .3s .2s ease-in-out,
+                        transform .3s .2s ease-in-out;
+        }
+    }
+    &.active &-content-wrapper {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
