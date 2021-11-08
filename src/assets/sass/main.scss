@@ -1,0 +1,27 @@
+/**
+ * Project Kasa
+ * Main Sass file
+ */
+
+@use 'sass:math';
+
+
+
+// Variables
+@import 'variables';
+
+// Functions
+
+// Mixins
+@import 'mixins/box-shadow';
+@import 'mixins/media-queries';
+
+// Animations
+
+// Reset
+@import 'reset';
+
+// Components
+
+// Layout
+@import 'layout';
