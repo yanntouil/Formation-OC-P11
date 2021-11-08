@@ -6,7 +6,71 @@
 
 
 
-
+ 
+/**
+ * BASE
+ */
 body {
     background-color: $white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#root {
+    display: flex; flex-direction: column;
+    min-height: 100vh;
+
+}
+
+/**
+ * HEADER
+ */
+.header {
+    width: 100%;
+    max-width: 90rem;
+    margin: 2.5rem auto 3.125rem;
+    padding: 0 6.25rem;
+    &-nav {
+        display: flex; justify-content: space-between; align-items: center;
+    }
+    &-menu {
+        display: flex;
+        gap: 3.5rem;
+        &-link {
+            color: $primary;
+            font-size: 1.5rem;
+            font-weight: 500;
+            a.active & {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+/**
+ * MAIN
+ */
+.main {
+    flex-grow: 1;
+    display: flex; flex-direction: column;
+    width: 100%;
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 0 6.25rem;
+}
+
+/**
+ * FOOTER
+ */
+.footer {
+    display: flex; justify-content: center;
+    padding: 4.125rem 2rem 1.8125rem;
+    background-color: $black;
+    color: $white;
+    &-container {
+        display: flex; flex-direction: column; align-items: center;
+        width: 100%;
+        max-width: calc(90rem - 6.25rem * 2);
+        margin: 0 auto;
+        gap: 2rem;
+    }
 }
