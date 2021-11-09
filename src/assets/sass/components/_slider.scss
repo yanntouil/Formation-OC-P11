@@ -1,0 +1,54 @@
+/**
+ * Slider
+ */
+
+
+
+
+
+
+.slider {
+    position: relative;
+    height: 26rem;
+    &-picture {
+        position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+        animation: sliderFadeIn .8s ease-in-out;
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1.5625rem;
+        }
+    }
+    &-button {
+        position: absolute; top: 0; bottom: 0;
+        padding: 1.5rem;
+        cursor: pointer;
+        &.next {
+            right: 0;
+        }
+        &.previous {
+            left: 0;
+        }
+    }
+    &-counter {
+        position: absolute; right: 0; bottom: 0; left: 0;
+        padding: 1.5rem 0;
+        color: $white;
+        text-align: center;
+        font-size: 1.125rem;
+        font-weight: 500;
+    }
+}
+
+
+
+
+@keyframes sliderFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

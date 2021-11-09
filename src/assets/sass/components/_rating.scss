@@ -1,0 +1,21 @@
+/**
+ * Rating
+ */
+
+
+
+
+
+
+.rating {
+    display: flex;
+    gap: 0.625rem;
+    &-star {
+        fill: currentColor;
+        color: #E3E3E3;
+        &.active {
+            fill: currentColor;
+            color: $primary;
+        }
+    }
+}

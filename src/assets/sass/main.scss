@@ -23,10 +23,14 @@
 
 // Components
 @import 'components/accordion';
+@import 'components/slider';
+@import 'components/rating';
 
 // Pages
 @import 'pages/error404';
 @import 'pages/about-us';
+@import 'pages/home';
+@import 'pages/accommodation';
 
 // Layout
 @import 'layout';
