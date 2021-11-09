@@ -8,13 +8,30 @@
 
 
 .page-home {
-    margin-bottom: 3rem;
+    color: $white;
+    font-weight: 500;
+    @include media-min('sm') {
+        margin-bottom: 3rem;
+    }
+    @include media-max('sm') {
+        margin-bottom: 1.5rem;
+    }
+    // HEADER
     &-header{
         position: relative;
-        height: 14rem;
-        margin-bottom: 2rem;
-        border-radius: 1.5625rem;
         overflow: hidden;
+        @include media-min('sm') {
+            height: 14rem;
+            margin-bottom: 2rem;
+            border-radius: 1.5625rem;
+            font-size: 3rem;
+        }
+        @include media-max('sm') {
+            height: 6.875rem;
+            margin-bottom: 1.5rem;
+            border-radius: .625rem;
+            font-size: 1.5rem;
+        }
         & img {
             width: 100%; height: 100%;
             object-fit: cover;
@@ -22,40 +39,64 @@
         &-title {
             position: absolute; top: 0; right: 0; bottom: 0; left: 0;
             display: flex; justify-content: center; align-items: center;
-            background-color: rgba($black, .17);
-            color: $white;
-            font-weight: 500;
-            font-size: 3rem;
+            padding: 1rem;
+            background-color: rgba($black, .3);
         }
     }
+    // GRID
     &-list {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 3.75rem;
-        padding: 3.125rem;
         border-radius: 1.5625rem;
-        background-color: $gray-100;
-    }
-}
-.card {
-    position: relative;
-    &-image {
-        border-radius: 0.625rem;
-        & img {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            border-radius: 0.625rem;
+        @include media-min('sm') {
+            padding: 3.125rem;
+            gap: 3.75rem;
+            background-color: $gray-100;
+        }
+        @include media-min('xl') {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include media-between('md', 'xl') {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include media-max('md') {
+            grid-template-columns: 1fr;
+        }
+        @include media-max('sm') {
+            padding: 0;
+            gap: 1.125rem;
         }
     }
-    &-header {
-        position: absolute; top: 0; right: 0; bottom: 0; left: 0;
-        display: flex; align-items: flex-end;
-        padding: 1.25rem;
-        border-radius: 0.625rem;
-        background: linear-gradient(180deg, rgba($white, 0) 50%, rgba($black, .8) 100%);
-        color: $white;
-        font-size: 1.125rem;
-        font-weight: 500;
+    // CARD
+    .card {
+        position: relative;
+        &-image {
+            border-radius: 0.625rem;
+            & img {
+                width: 100%;
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+                border-radius: 0.625rem;
+                @include media-min('md') {
+                    aspect-ratio: 1 / 1;
+                }
+                @include media-max('md') {
+                    aspect-ratio: 4 / 3;
+                }
+            }
+        }
+        &-header {
+            position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+            display: flex; align-items: flex-end;
+            border-radius: 0.625rem;
+            background: linear-gradient(180deg, rgba($white, 0) 50%, rgba($black, .8) 100%);
+            font-size: 1.125rem;
+            line-height: 1.6;
+            @include media-min('sm') {
+                padding: 1.25rem;
+            }
+            @include media-max('sm') {
+                padding: 1rem;
+            }
+        }
     }
 }

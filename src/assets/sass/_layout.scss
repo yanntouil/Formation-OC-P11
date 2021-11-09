@@ -27,20 +27,47 @@ body {
 .header {
     width: 100%;
     max-width: 90rem;
-    margin: 2.5rem auto 3.125rem;
-    padding: 0 6.25rem;
+    margin: 0 auto;
+    @include media-min('xl') {
+        padding: 2.5rem 6.25rem 3.125rem;
+    }
+    @include media-between('sm', 'xl') {
+        padding: 2.5rem 3rem 3.125rem;
+    }
+    @include media-max('sm') {
+        padding: 1.25rem 1.25rem 1.25rem;
+    }
+    // NAVBAR
     &-nav {
         display: flex; justify-content: space-between; align-items: center;
     }
+    // LOGO
+    @include media-max('sm') {
+        &-logo img {
+            height: 2.375rem;
+        }
+    }
+    // MENU
     &-menu {
         display: flex;
-        gap: 3.5rem;
         &-link {
             color: $primary;
-            font-size: 1.5rem;
             font-weight: 500;
             a.active & {
                 text-decoration: underline;
+            }
+        }
+        @include media-min('sm') {
+            gap: 3.625rem;
+            &-link {
+                font-size: 1.5rem;
+            }
+        }
+        @include media-max('sm') { 
+            gap: 1rem;
+            &-link {
+                font-size: 0.75rem;
+                text-transform: uppercase;
             }
         }
     }
@@ -55,7 +82,15 @@ body {
     width: 100%;
     max-width: 90rem;
     margin: 0 auto;
-    padding: 0 6.25rem;
+    @include media-min('xl') {
+        padding: 0 6.25rem;
+    }
+    @include media-between('sm', 'xl') {
+        padding: 0 3rem;
+    }
+    @include media-max('sm') {
+        padding: 0 1.25rem;
+    }
 }
 
 /**
@@ -63,14 +98,22 @@ body {
  */
 .footer {
     display: flex; justify-content: center;
-    padding: 4.125rem 2rem 1.8125rem;
     background-color: $black;
-    color: $white;
     &-container {
         display: flex; flex-direction: column; align-items: center;
         width: 100%;
-        max-width: calc(90rem - 6.25rem * 2);
+        max-width: 90rem;
         margin: 0 auto;
+        padding: 4.125rem 3rem 1.8125rem;
         gap: 2rem;
+        color: $white;
+        @include media-min('sm') {
+            padding: 4.125rem 3rem 1.8125rem;
+            font-size: 1.5rem;
+        }
+        @include media-max('sm') {
+            padding: 4rem 1.5rem;
+            font-size: 0.75rem;
+        }
     }
 }

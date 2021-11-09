@@ -11,7 +11,6 @@
     &-header {
         position: relative;
         display: flex; justify-content: space-between; align-items: center;
-        padding: .625rem 1.125rem;
         border-radius: .3125rem;
         background-color: $primary;
         color: $white;
@@ -20,6 +19,17 @@
         line-height: 1.2;
         transform: rotate(0);
         cursor: pointer;
+        @include media-min('sm') {
+            padding: .625rem 1.125rem;
+            font-size: 1.5rem;
+        }
+        @include media-max('sm') {
+            padding: .5rem 1rem;
+            font-size: .8125rem;
+            & img {
+                height: .5625rem;
+            }
+        }
         & img {
             transition: transform .3s ease-in-out;
         }
@@ -28,21 +38,27 @@
         transform: rotate(-180deg);
     }
     &-content {
-        margin-top: -0.3125rem;
+        margin: -0.3125rem 0 0.3125rem;
         overflow: hidden;
         border-radius: 0 0 .3125rem .3125rem;
         background-color: $gray-100;
-        color: $primary;
-        font-size: 1.5rem;
-        font-weight: 400;
-        line-height: 1.4;
         transition: height .3s ease-in-out;
         &-wrapper {
-            padding: 2rem 1.125rem 1.125rem;
             opacity: 0;
+            color: $primary;
+            font-weight: 400;
+            line-height: 1.4;
             transform: translateX(3rem);
             transition: opacity .3s .2s ease-in-out,
                         transform .3s .2s ease-in-out;
+            @include media-min('sm') {
+                padding: 2rem 1.125rem 1.125rem;
+                font-size: 1.5rem;
+            }
+            @include media-max('sm') {
+                padding: 1rem;
+                font-size: 0.75rem;
+            }
         }
     }
     &.active &-content-wrapper {
