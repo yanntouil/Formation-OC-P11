@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import LogoHeader from './LogoHeader.svg'
 
+/**
+ * Show header
+ * @component
+ */
 export default class Header extends Component {
     render() {
         return (

@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom'
 import homeImg from "../assets/images/home.jpg"
 
 export default class Home extends Component {
+    /**
+     * Render
+     * @return {JSX}
+     * @memberof Home
+     */
     render() {
         if (this.context.accommodations.length === 0) this.context.fetchAccommodations()
         return (

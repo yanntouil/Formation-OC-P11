@@ -2,28 +2,58 @@ import React, { Component } from 'react'
 import chevronDownImg from "../../assets/images/chevron-down.svg"
 
 
+/**
+ * Show and animate an accordion
+ * @component Accordion
+ * @extends {Component}
+ */
 export default class Accordion extends Component {
 
+    /**
+     * Creates an instance of Accordion
+     * @param {{string, JSX}} props
+     * @constructor
+     */
     constructor({title, children}) {
         super()
         this.title = title
         this.children = children
         this.contentRef = null
+
+        /**
+         * State show
+         * @state
+         */
         this.state = {
             show: false,
         }
     }
 
+    /**
+     * Toggle show state
+     * @returns {void}
+     * @memberof Accordion
+     */
     toggleShow () {
         this.setState({
             show : !this.state.show
         })
     }
 
+    /**
+     * Get heigh of content element
+     * @return {number} 
+     * @memberof Accordion
+     */
     getContentHeight () {
         return this.contentRef.scrollHeight;
     }
 
+    /**
+     * Render
+     * @return {JSX} 
+     * @memberof Accordion
+     */
     render() {
         return (
             <div className={this.state.show ? 'accordion active' : 'accordion'}>

@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import LogoFooter from './LogoFooter.svg'
 
-
+/**
+ * Show footer
+ * @component
+ */
 export default class Footer extends Component {
     render() {
         return (

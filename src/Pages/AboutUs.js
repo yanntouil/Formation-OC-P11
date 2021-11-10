@@ -3,6 +3,11 @@ import aboutUsImg from "../assets/images/about-us.jpg"
 import Accordion from '../Components/Ui/Accordion'
 
 export default class AboutUs extends Component {
+    /**
+     * Render
+     * @return {*} 
+     * @memberof AboutUs
+     */
     render() {
         return (
             <div className="page-about-us">

@@ -10,7 +10,15 @@ import Error404 from './Pages/Error404.js';
 import './App.scss';
 
 
+/**
+ * @component
+ */
 export default class App extends Component {
+    /**
+     * Render
+     * @return {JSX}
+     * @memberof App
+     */
     render() {
         return (
             <AccommodationsContextProvider>

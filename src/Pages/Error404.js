@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 export default class Error404 extends Component {
+    /**
+     * Render
+     * @return {JSX} 
+     * @memberof Error404
+     */
     render() {
         return (
             <div className="page-error404">

@@ -1,18 +1,29 @@
 import React, {useState} from 'react'
 import SliderButton from './SliderButton'
 
-
-
-
-
-
-
+/**
+ * Show and animate a pictures slider
+ * @component
+ * @param {string} {pictures}
+ * @return {JSX} 
+ */
 export default function Slider({pictures}) {
+
+    /** 
+     * Slider animation state
+     * @state
+     * @const {string} sliderAnimation
+     * @const {funnction} setSliderAnimation
+     */
     const [sliderAnimation, setSliderAnimation] = useState({
         index: 0,
         inProgress: false,
     })
 
+    /**
+     * Go to next slide
+     * @returns {void}
+     */
     const nextSlide = () => {
         if (sliderAnimation.inProgress) return
         let index = sliderAnimation.index
@@ -28,6 +39,10 @@ export default function Slider({pictures}) {
         }), 400)
     }
 
+    /**
+     * Go to previous slide
+     * @returns {void}
+     */
     const previousSlide = () => {
         if (sliderAnimation.inProgress) return
         let index = sliderAnimation.index
