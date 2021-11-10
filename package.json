@@ -2,7 +2,7 @@
   "name": "projet-11",
   "version": "0.1.0",
   "private": true,
-  "homepage ": "https://yanntouil.github.io/YannTouil_11_08112021/build/index.html",
+  "homepage ": "https://yanntouil.github.io/YannTouil_11_08112021",
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
