@@ -37,6 +37,7 @@
         }
     }
     &-link {
+        text-decoration: underline;
         @include media-min('sm') {
             margin: 11.25rem 0;
             font-size: 1.125rem;
